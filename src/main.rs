@@ -1,7 +1,6 @@
-mod inputs;
+mod editor;
 mod errors;
-mod ioutils;
 
 fn main() {
-   inputs::start_main_loop();
+   editor::start_main_loop();
 }

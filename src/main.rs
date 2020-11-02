@@ -1,6 +1,6 @@
-mod editor;
-mod errors;
+pub(crate) mod editor;
+pub(crate) mod errors;
 
-fn main() {
+pub(crate) fn main() {
    editor::start_main_loop();
 }

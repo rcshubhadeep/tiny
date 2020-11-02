@@ -1,5 +1,5 @@
 use std::io::{self, stdout};
-use termion::event::Key;
+use termion::{event::Key, raw::RawTerminal};
 use termion::input::TermRead;
 use termion::raw::IntoRawMode;
 
@@ -35,7 +35,7 @@ impl Editor {
 
 
 pub fn start_main_loop(){
-    let _stdout = stdout().into_raw_mode().unwrap();
-    let editor = Editor::default();
+    let _stdout: RawTerminal<io::Stdout> = stdout().into_raw_mode().unwrap();
+    let editor: Editor = Editor::default();
     editor.run();
 }

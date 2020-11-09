@@ -1,6 +1,10 @@
-pub(crate) mod editor;
-pub(crate) mod errors;
+#![warn(clippy::all, clippy::pedantic)]
+mod editor;
+mod terminal;
 
-pub(crate) fn main() {
-   editor::start_main_loop();
+use editor::Editor;
+pub use terminal::Terminal;
+
+fn main() {
+    Editor::default().run();
 }
